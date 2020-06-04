@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title> Table</title>
+  </head>
+  <body>
+    <table id="table"> 
+      <tbody>
+                <tr> 
+                    <td style="color:#ff00ff; background-color: #FFFFFF;">Q</td> 
+                    <td style="background-color: #442244; color: #442244;">Y</td> 
+                    <td style="color:#ffff00; background-color:#442244">A</td> 
+
+                </tr> 
+                <tr> 
+                    <td style="color:#FFEEFE; background-color:#990000">Q</td> 
+                    <td style="color:#FFFF00; background-color:#FF0; ">M</td> 
+                    <td style="color:#000000; background-color:#FF7777">O</td> 
+                </tr> 
+        </tbody>
+    </table>
+    <script>
+      function solution(){
+        let table = document.getElementsByTagName('table')[0];
+        let rows = table?.rows;
+        console.log(rows?.length);
+        let mystr ='';
+        for ( i=0; i < rows?.length; i++){
+          let tds = rows[i].getElementsByTagName('TD');
+          for(j=0; j < tds.length; j++ ){
+            let style = getComputedStyle(tds[j]);
+            console.log(tds[j].style);
+            let bc =style.backgroundColor;
+            let c=style.color;
+            if (bc !== c){
+              mystr += tds[j].textContent;
+            }
+
+          }
+          // console.log(rows[i].textContent);
+        }
+        console.log(mystr);
+      }
+      solution();
+    </script>
+  </body>
+</html>
