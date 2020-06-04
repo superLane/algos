@@ -1,0 +1,7 @@
+ const newData = data =>
+      data.map(item =>
+        values.reduce((acc, curr) => {
+          acc[curr] = item[curr];
+          return acc;
+        }, {})
+      );
